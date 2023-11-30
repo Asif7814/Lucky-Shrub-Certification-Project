@@ -4,5 +4,77 @@
         - FIRST ROW; FULL-WIDTH
         - SECOND ROW; THREE COLUMNS
     - FOOTER; CREATE TWO HALF-WIDTH COLUMNS 
+
+
 */
 
+/*GENERAL ELEMENTS*/
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px Arial, sans-serif; 
+}
+
+body {
+    width: 100%;
+}
+
+/*HEADER & NAVIGATION BAR*/
+header, nav, ul, li, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: whitesmoke;
+}
+
+nav > ul {
+    gap: 15px;
+    list-style: none;
+}
+
+li > a {
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: black;
+}
+
+li > a:hover {
+    color: white;   
+}
+
+main {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+/*PROMOTIONAL BANNER*/
+.promotion {
+    background-color: chocolate;
+}
+
+/*INFO*/
+.info {
+    background-color: aquamarine;
+}
+
+/*FOOTER*/
+footer {
+    height: 20vh;
+}
+
+footer > div {
+    width: 50%;
+    color: black;
+}
+
+footer:nth-child(2) {
+    justify-content: center;
+}

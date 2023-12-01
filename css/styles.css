@@ -4,11 +4,9 @@
         - FIRST ROW; FULL-WIDTH
         - SECOND ROW; THREE COLUMNS
     - FOOTER; CREATE TWO HALF-WIDTH COLUMNS 
-
-
 */
 
-/*GENERAL ELEMENTS*/
+/*OVERARCHING*/
 * {
     padding: 0;
     border: 0;
@@ -16,65 +14,101 @@
     box-sizing: border-box;
 }
 
-html {
-    font: 16px Arial, sans-serif; 
-}
-
 body {
-    width: 100%;
+    display: grid;
+    grid-template-rows: 10vh 15vh 1fr 20vh;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
 }
 
-/*HEADER & NAVIGATION BAR*/
-header, nav, ul, li, footer {
+main {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+header {
+    grid-area: header;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: whitesmoke;
+    height: 20vh;
+
+    padding: 5px 10px 0 10px;
+}
+
+nav {
+    grid-area: nav;
+
+    height: 20vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 10px;
 }
 
 nav > ul {
-    gap: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
     list-style: none;
 }
 
-li > a {
-    text-decoration: none;
+nav > ul > li {
+    justify-content: space-evenly;
+}
+
+nav > ul > li > a {
     text-align: center;
+    text-decoration: none;
     text-transform: capitalize;
 
     color: black;
 }
 
-li > a:hover {
-    color: white;   
-}
-
 main {
+    grid-area: main;
+
     display: grid;
-    grid-template-rows: 2fr 1fr;
-}
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "promo promo promo"
+    "service shop sale";
 
-/*PROMOTIONAL BANNER*/
-.promotion {
-    background-color: chocolate;
-}
-
-/*INFO*/
-.info {
     background-color: aquamarine;
 }
 
-/*FOOTER*/
+.promotion {
+    grid-area: promo;
+}
+
+.info .info-1 {
+    grid-area: service;   
+}
+
+.info .info-2 {
+    grid-area: shop;
+}
+
+.info .info-3 {
+    grid-area: sale;
+}
+
 footer {
-    height: 20vh;
-}
+    grid-area: footer;
 
-footer > div {
-    width: 50%;
-    color: black;
-}
-
-footer:nth-child(2) {
-    justify-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 }

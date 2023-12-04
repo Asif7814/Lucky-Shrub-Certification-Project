@@ -182,6 +182,7 @@ nav > ul > li > a {
     width: 20rem;
     height: 20rem;
     object-fit: cover;
+    border-radius: 16px;
 }
 
 .info > ul {
